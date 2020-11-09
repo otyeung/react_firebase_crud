@@ -1,9 +1,13 @@
 # React CRUD Application
 
-firebase project name : react crud
-web app name : react crud
-github repo : react_firebase_crud
+#### firebase project name : react crud
+#### web app name : react crud
+#### github repo : react_firebase_crud
 
+A very simple CRUD React application to maintain customer contact using firebase real-time database
+
+### Note
+firebase.js is not pushed in github, therefore you must rename "firebase.js.template" to "firebase.js" and populate your firebase config there.
 
 # Getting Started with Create React App
 
