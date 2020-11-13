@@ -6,6 +6,9 @@
 
 A very simple CRUD React application to maintain customer contact using firebase real-time database
 
+### /functions includes a Firebase Cloud Function that can accept REST API to add record in the Firebase database
+### exposes routes include /api/login, /api//admin, /api/contact
+
 ### Note
 firebase.js is not pushed in github, therefore you must rename "firebase.js.template" to "firebase.js" and populate your firebase config there.
 
