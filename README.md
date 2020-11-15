@@ -6,6 +6,9 @@
 
 A very simple CRUD React application to maintain customer contact using firebase real-time database
 
+[main] branch - use AXIOS HTTP post to add record
+[firebase_sdk] branch - use Firebase SDK to add record
+
 ### /functions includes a Firebase Cloud Function that can accept REST API to add record in the Firebase database
 ### exposes routes include /api/login, /api//admin, /api/contact
 
