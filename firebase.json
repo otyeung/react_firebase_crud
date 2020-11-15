@@ -14,15 +14,7 @@
       {
         "source": "/api",
         "function": "api"
-      },
-      {
-        "source": "/admin",
-        "function": "api"
-      },
-      {
-        "source": "/contacts",
-        "function": "api"
-      }      
+      }
     ]
   }
 }
