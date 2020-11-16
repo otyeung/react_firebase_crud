@@ -1,0 +1,14 @@
+import firebase from "firebase/app"
+
+require("firebase/database")
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  ...
+};
+
+// Initialize Firebase, returns an object
+var fireDb = firebase.initializeApp(firebaseConfig)
+
+// export firebase database reference
+export default fireDb.database().ref()
