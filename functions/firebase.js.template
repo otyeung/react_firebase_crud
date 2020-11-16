@@ -1,14 +1,24 @@
-import firebase from "firebase/app"
+const firebase = require("firebase/app")
+//require("firebase/app")
 
-require("firebase/database")
+// #### Firebase database initialization
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+// Add the Firebase products that you want to use
+//require("firebase/auth");
+
+require("firebase/database");
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
   ...
 };
 
 // Initialize Firebase, returns an object
-var fireDb = firebase.initializeApp(firebaseConfig)
+//const database = firebase.initializeApp(firebaseConfig)
 
-// export firebase database reference
-export default fireDb.database().ref()
+firebase.initializeApp(firebaseConfig)
+const database = firebase.database()
+const ref = database.ref('contacts')
+
+module.exports = ref
