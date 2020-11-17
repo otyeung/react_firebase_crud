@@ -38,6 +38,41 @@ app.get('/contacts', (req, res) => {
   })
 })
 
+// POST https://us-central1-react-crud-d487b.cloudfunctions.net/api/contacts/converse route
+app.post('/contacts/converse', (req, res) => {
+  var contact = {
+      fullName : req.body.prompts.answers.name,
+      address : '',
+      email : req.body.prompts.answers.email,
+      mobile : req.body.prompts.answers.phone
+  }   
+
+  // Method 1 : use HTTP post to add record into realtime database
+/*       axios.post('https://react-crud-d487b.firebaseio.com/contacts.json', contact)
+    .then((response) => {
+      console.log("Added a new contact to Firebase real-time database")
+      console.log('👉 Returned data:', response);
+      res.send("Added a new contact to Firebase real-time database : " + response)
+    }, (error) => {
+      console.log(`😱 Axios request failed: ${error}`);
+      res.send(`😱 Axios request failed: ${error}`)
+    }); */
+
+  // Method 2 : use Firebase SDK to add record into realtime database
+  // Authentication is disabled to make it simple
+  ref.push(contact)
+    .then((response) => {
+      console.log("Added a new contact to Firebase real-time database")
+      console.log('👉 Returned data:', response)
+      //res.send("Added a new contact to Firebase real-time database : " + response)
+      res.status(200).send('')
+    }, (error) => {
+      console.log(`😱 Axios request failed: ${error}`)
+      //res.send(`😱 Axios request failed: ${error}`)
+      res.status(400).send('')
+    })
+})
+
 // POST https://us-central1-react-crud-d487b.cloudfunctions.net/api/contacts route
 app.post('/contacts', (req, res) => {
     var contact = {
@@ -63,10 +98,10 @@ app.post('/contacts', (req, res) => {
     ref.push(contact)
       .then((response) => {
         console.log("Added a new contact to Firebase real-time database")
-        console.log('👉 Returned data:', response);
+        console.log('👉 Returned data:', response)
         res.send("Added a new contact to Firebase real-time database : " + response)
       }, (error) => {
-        console.log(`😱 Axios request failed: ${error}`);
+        console.log(`😱 Axios request failed: ${error}`)
         res.send(`😱 Axios request failed: ${error}`)
       })
 })
